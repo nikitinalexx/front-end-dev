@@ -27,6 +27,11 @@ body {
   display: block;
 }
 
+.thumbnail-item + .thumbnail-item {
+  margin-top: 10px;
+}
+
 .thumbnail-list {
   list-style: none;
+  padding: 0;
 }
