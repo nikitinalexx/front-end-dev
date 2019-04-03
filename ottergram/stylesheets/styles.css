@@ -15,10 +15,10 @@ a {
 
 .logo-text {
   background: white;
-  text-align: center;
-  text-transform: uppercase;
   font-family: lakeshore;
   font-size: 37px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 body {
@@ -43,7 +43,8 @@ body {
 .thumbnail-item {
   border: 1px solid rgb(100%, 100%, 100%);
   border: 1px solid rgba(100%, 100%, 100%, 0.8);
-  display: block;
+  display: inline-block;
+  width: 120px;
 }
 
 .thumbnail-item+.thumbnail-item {
@@ -53,4 +54,11 @@ body {
 .thumbnail-list {
   list-style: none;
   padding: 0;
+
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.detail-image {
+  width: 90%;
 }
