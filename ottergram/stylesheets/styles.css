@@ -9,8 +9,29 @@
   font-style: normal;
 }
 
+html, body {
+  height: 100%;
+}
+
+body {
+  background: rgb(204, 54, 55);
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+}
+
 a {
   text-decoration: none;
+}
+
+.main-header {
+  flex: 01 auto;
+}
+
+.main-content {
+  flex: 11 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo-text {
@@ -19,11 +40,6 @@ a {
   font-size: 37px;
   text-align: center;
   text-transform: uppercase;
-}
-
-body {
-  background: rgb(204, 54, 55);
-  font-size: 10px;
 }
 
 .thumbnail-title {
@@ -52,13 +68,17 @@ body {
 }
 
 .thumbnail-list {
+  flex: 01 auto;
   list-style: none;
   padding: 0;
-
   white-space: nowrap;
   overflow-x: auto;
 }
 
 .detail-image {
   width: 90%;
+}
+
+.detail-image-container {
+  flex: 11 auto;
 }
