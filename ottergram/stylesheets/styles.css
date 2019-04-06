@@ -20,29 +20,71 @@
   font-style: normal;
 }
 
-html, body {
-  height: 100%;
+.HolyGrail {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background: rgb(204, 54, 55);
+  font-size: 10px;
 }
 
-body {
-  background: rgb(204, 54, 55);
+.HolyGrail-body {
   display: flex;
+  flex: 1;
+}
+
+.HolyGrail-content {
+  flex: 1;
+}
+
+.detail-image-container {
+  flex: 11 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-image-frame {
+  position: relative;
+  text-align: center;
+}
+
+/* .detail-image {
+  width: 100%;
+} */
+
+.HolyGrail-nav, .HolyGrail-ads {
+  /* 12em is the width of the columns */
+  flex: 0 0 auto;
+  overflow-y: auto;
+}
+
+.HolyGrail-nav {
+  /* put the nav on the left */
+  order: -1;
+}
+
+.thumbnail-list {
+  flex: 01 auto;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  white-space: nowrap;
+  overflow: auto;
+  order: 2;
   flex-direction: column;
-  font-size: 10px;
+}
+
+html, body {
+  height: 100%;
 }
 
 a {
   text-decoration: none;
 }
-
-.main-header {
-  flex: 01 auto;
-}
-
-.main-content {
-  flex: 11 auto;
-  display: flex;
-  flex-direction: column;
+.detail-image {
+  width: 90%;
 }
 
 .logo-text {
@@ -75,33 +117,6 @@ a {
   max-width: 120px;
 }
 
-.thumbnail-list {
-  flex: 01 auto;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  padding: 0;
-  white-space: nowrap;
-  overflow-x: auto;
-  order: 2;
-}
-
-.detail-image {
-  width: 90%;
-}
-
-.detail-image-container {
-  flex: 11 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.detail-image-frame {
-  position: relative;
-  text-align: center;
-}
-
 .detail-image-title {
   position: absolute;
   bottom: -16px;
@@ -112,23 +127,26 @@ a {
   font-size: 40px;
 }
 
-@media all and (orientation: landscape) {
-  .main-content {
-    flex-direction: row;
-    overflow: hidden;
+
+
+@media (orientation: portrait) {
+
+  .HolyGrail-body {
+    flex-direction: column;
+    flex: 1;
   }
+
+  .HolyGrail-content {
+    flex: 1;
+  }
+
+  .HolyGrail-nav, .HolyGrail-ads {
+   /* 12em is the width of the columns */
+   flex: 0 0 12em;
+ }
 
   .thumbnail-list {
-    flex-direction: column;
-    order: 0;
-    margin-left: 20px;
+    flex-direction: row;
   }
 
-  .thumbnail-item {
-    max-width: 300px;
-  }
-
-  .thumbnail-item + .thumbnail-item {
-    margin-top: 20px;
-  }
 }
