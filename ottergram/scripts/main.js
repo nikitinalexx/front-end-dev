@@ -1,6 +1,7 @@
 var DETAIL_IMAGE_SELECTOR = '[data-image-role="target"]';
 var DETAIL_TITLE_SELECTOR = '[data-image-role="title"]';
 var THUMBNAIL_LINK_SELECTOR = '[data-image-role="trigger"]';
+var HIDDEN_DETAIL_CLASS = 'hidden-detail';
 
 function setDetails(imageUrl, titleText) {
   'use strict';
@@ -45,6 +46,11 @@ function initializeEvents() {
   'use strict';
   var thumbnails = getThumbnailsArray();
   thumbnails.forEach(addThumbClickHandler);
+}
+
+function hideDetails() {
+  'use strict';
+  document.body.classList.add(HIDDEN_DETAIL_CLASS);
 }
 
 initializeEvents();
