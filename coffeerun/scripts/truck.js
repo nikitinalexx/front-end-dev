@@ -12,6 +12,22 @@
     this.db.add(order.emailAddress, order);
   };
 
+  Truck.prototype.makeUserWip = function(email) {
+    console.log('Making a user wip ' + email);
+    var wipUsers = this.db.get('wipUsers') || {};
+    wipUsers[email] = true;
+    this.db.add('wipUsers', wipUsers);
+  }
+
+  Truck.prototype.getWip = function(email) {
+    var wipUsers = this.db.get('wipUsers');
+    if (wipUsers && wipUsers[email]) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   Truck.prototype.deliverOrder = function(customerId) {
     console.log('Delivering order for ' + customerId);
     this.db.remove(customerId);
