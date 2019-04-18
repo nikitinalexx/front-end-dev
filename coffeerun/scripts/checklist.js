@@ -19,14 +19,24 @@
       'class': 'checkbox'
     })
 
-    var $label = $('<label></label>');
+    var color = 'style="color: rgb(0,0,0);"';
+    if (coffeeOrder.flavor === 'caramel') {
+      color = 'style="color: rgb(167,107,41);"';
+    } else if (coffeeOrder.flavor === 'almond') {
+      color = 'style="color: rgb(94,87,80);"';
+    } else if (coffeeOrder.flavor === 'mocha') {
+      color = 'style="color: rgb(111,55,45);"';
+    }
+
+    var $label = $('<label ' + color + '></label>');
 
     var $checkbox = $('<input></input>', {
       type: 'checkbox',
       value: coffeeOrder.emailAddress
     });
 
-    var description = coffeeOrder.size + ' ';
+    var description = '[' + coffeeOrder.strength + 'x] ';
+    description += coffeeOrder.size + ' ';
 
     if (coffeeOrder.flavor) {
       description += coffeeOrder.flavor + ' ';
@@ -37,8 +47,7 @@
       description += ' ' + coffeeOrder.extraAbility;
     }
 
-    description += ', (' + coffeeOrder.emailAddress + ')';
-    description += ' [' + coffeeOrder.strength + 'x]';
+    description += '(' + coffeeOrder.emailAddress + ')';
 
     $label.append($checkbox);
     $label.append(description);
