@@ -6,7 +6,11 @@
   <title>coffeerun</title>
   <link rel="stylesheet" href="stylesheets/styles.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+  <style>
+    form :focus:required:invalid {
+      border-color: #a94442;
+    }
+  </style>
 
 </head>
 
@@ -21,7 +25,7 @@
         <form data-coffee-order="form">
           <div class="form-group">
             <label for="coffeeOrder">Coffee Order</label>
-            <input class="form-control" name="coffee" id="coffeeOrder" autofocus required>
+            <input class="form-control" name="coffee" id="coffeeOrder" autofocus required pattern="[a-zA-Z\s]+">
           </div>
           <div class="form-group">
             <label for="emailInput">Email</label>
@@ -108,19 +112,21 @@
         </div>
         <div class="modal-footer">
           <button type="button" id="modalConfirm" class="btn btn-primary">Sure!</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">No, keep it yourself!</button>
+          <button type="button" id="modalDecline" class="btn btn-secondary" data-dismiss="modal">No, keep it yourself!</button>
         </div>
       </div>
     </div>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="scripts/validation.js" charset="utf-8"></script>
   <script src="scripts/formhandler.js" charset="utf-8"></script>
   <script src="scripts/sliderhandler.js" charset="utf-8"></script>
   <script src="scripts/emailhandler.js" charset="utf-8"></script>
   <script src="scripts/checklist.js" charset="utf-8"></script>
+  <script src="scripts/remotedatastore.js" charset="utf-8"></script>
   <script src="scripts/datastore.js" charset="utf-8"></script>
   <script src="scripts/truck.js" charset="utf-8"></script>
   <script src="scripts/main.js" charset="utf-8"></script>

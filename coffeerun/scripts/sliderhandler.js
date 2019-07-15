@@ -41,14 +41,14 @@
 
   SliderHandler.prototype.addChangeHandler = function() {
     console.log('Setting changle handler for slider');
-    this.$sliderElement.on('input', function(data, event) {
-      this.$sliderLabel[0].textContent = this.initialLabelValue + ' ' + this.$sliderElement[0].value;
+    this.$sliderElement.on('input', function(event) {
+      this.$sliderLabel[0].textContent = this.initialLabelValue + ' ' + event.target.value;
       var color = this.defaultColor;
-      if (this.$sliderElement[0].value <= 50) {
-        var percent = this.$sliderElement[0].value / 50;
+      if (event.target.value <= 50) {
+        var percent = event.target.value / 50;
         color = 'rgb(' + (255 * percent) + ', 255, 0';
       } else {
-        var percent = (this.$sliderElement[0].value - 50) / 50;
+        var percent = (event.target.value - 50) / 50;
         color = 'rgb(255,' + (255 * (1 - percent)) + ', 0';
       }
       this.$sliderLabel[0].style.color = color;
