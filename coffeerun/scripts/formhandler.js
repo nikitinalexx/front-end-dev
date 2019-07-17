@@ -68,17 +68,14 @@
         modalConfirm.click(function(event) {
           makeUserWip(data['emailAddress']);
           modalElement.modal('hide');
-          console.log('click 1');
           onClickCallback();
         });
         modalDecline.unbind();
         modalDecline.click(function(event) {
-          console.log('click 2');
           onClickCallback();
         });
         modalElement.modal('show');
       } else {
-        console.log('click 3');
         onClickCallback();
       }
 

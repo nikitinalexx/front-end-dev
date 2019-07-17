@@ -20,7 +20,7 @@
   var Validation = App.Validation;
   var CheckList = App.CheckList;
   var remoteDS = new RemoteDataStore(SERVER_URL);
-  var myTruck = new Truck('EAL', remoteDS);
+  var myTruck = new Truck('EAL', new DataStore());
   window.myTruck = myTruck;
   var checkList = new CheckList(CHECKLIST_SELECTOR);
   var formHandler = new FormHandler(FORM_SELECTOR, MODAL_SELECTOR, MODAL_CONFIRM_SELECTOR, MODAL_DECLINE_SELECTOR);
