@@ -16,7 +16,11 @@ var server = http.createServer(function (req, res) {
       handleError(err, res);
       return;
     } else {
-      res.setHeader('Content-Type', 'text/html');
+      if (filePath.endsWith('.css')) {
+        res.setHeader('Content-Type', 'text/css');
+      } else {
+        res.setHeader('Content-Type', 'text/html');
+      }
       res.end(data);
     }
   });
